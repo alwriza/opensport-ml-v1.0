@@ -6,7 +6,7 @@ xgboost==2.0.3
 
 # Computer Vision
 opencv-python==4.8.0.74
-mediapipe==0.10.3
+mediapipe==0.10.11
 
 # API & Web
 fastapi==0.103.1
