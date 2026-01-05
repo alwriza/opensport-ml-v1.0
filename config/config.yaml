@@ -1,20 +1,34 @@
-# OpenSport ML Configuration
-
 data:
-  # Video validation
-  min_duration_sec: 4
-  max_duration_sec: 10
-  min_resolution_width: 640
-  min_resolution_height: 480
-  min_fps: 24
-  max_file_size_mb: 50
+  # Video validation (RELAXED for user-friendly collection)
+  min_duration_sec: 2       # Relaxed from 4 (allows quick kicks)
+  max_duration_sec: 15      # Relaxed from 10 (allows longer sequences)
+  min_resolution_width: 480 # Relaxed from 640 (works for most phones)
+  min_resolution_height: 360 # Minimum for MediaPipe
+  min_fps: 20               # Relaxed from 24 (most phones do 30+)
+  max_file_size_mb: 100     # Increased from 50 (modern phones = larger files)
   
-  # Supported formats
+  # Supported formats (will match case-insensitively)
   video_formats:
     - .mp4
     - .avi
     - .mov
     - .mkv
+
+angle_detection:
+  # Camera angle validation
+  enabled: true  # Set to false to disable angle checking
+  
+  # Angles to completely reject
+  reject_angles:
+    - front       # Person facing camera (foot hidden)
+  
+  # Angles that work but give warnings
+  warning_angles:
+    - behind      # Behind view (legs may be occluded)
+  
+  # Preferred angles (no warning)
+  # - side
+  # - diagonal
 
 pose_extraction:
   # MediaPipe settings

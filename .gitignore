@@ -1,8 +1,12 @@
+dataset/videos/
+dataset/pose_data/
+dataset/training_data.csv
+!dataset/labels.csv
 venv/
 .env
 __pycache__/
 *.pyc
-dataset/videos/
+.DS_Store
 models/*.pkl
 models/*.joblib
-.DS_Store
+Miniconda3-latest-Linux-x86_64.sh*

@@ -1,8 +1,3 @@
-"""
-Pose Extraction Module
-Extracts 33 body keypoints from football kick videos using MediaPipe.
-"""
-
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -115,8 +110,15 @@ class PoseExtractor:
         
         # Get all video files
         video_files = []
-        for ext in self.config['data']['video_formats']:
-            video_files.extend(video_dir.glob(f"*{ext}"))
+        all_files = list(video_dir.iterdir())
+
+        for file in all_files:
+            if file.is_file():
+                file_ext_lower = file.suffix.lower()
+                config_exts_lower = [ext.lower() for ext in self.config['data']['video_formats']]
+                
+                if file_ext_lower in config_exts_lower:
+                    video_files.append(file)
         
         logger.info(f"Found {len(video_files)} videos to process")
         

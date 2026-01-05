@@ -103,7 +103,6 @@ class XGBoostTrainer:
             model.fit(
                 X_train_scaled, y_train[:, i],
                 eval_set=[(X_test_scaled, y_test[:, i])],
-                early_stopping_rounds=self.model_config['early_stopping_rounds'],
                 verbose=False
             )
             
