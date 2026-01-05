@@ -1,8 +1,3 @@
-"""
-FastAPI Inference Service
-Production API for kick analysis.
-"""
-
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, HttpUrl
@@ -20,8 +15,7 @@ from typing import Optional, Dict, List
 # Import our modules
 import sys
 sys.path.append('.')
-from feature_engineering import FeatureEngineer
-
+from src.preprocessing.feature_engineering import FeatureEngineer
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
