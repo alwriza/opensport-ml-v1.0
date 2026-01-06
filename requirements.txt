@@ -18,7 +18,6 @@ requests==2.31.0
 # Utilities
 python-dotenv==1.0.0
 pyyaml==6.0.1
-joblib==1.3.2
 tqdm==4.66.1
 
 # Visualization (optional)
