@@ -1,8 +1,3 @@
-"""
-Feature Engineering Module - ROBUST VERSION
-Handles missing landmarks and incomplete pose data gracefully.
-"""
-
 import numpy as np
 import pandas as pd
 import json
