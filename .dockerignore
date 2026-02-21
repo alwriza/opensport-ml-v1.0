@@ -1,0 +1,22 @@
+# Данные и тренировочные файлы
+dataset/
+files/
+
+# Инсталляторы
+Miniconda3-*.sh*
+
+# Git
+.git/
+.gitignore
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+
+# Dev-файлы
+*.md
+*.png
+*.csv
